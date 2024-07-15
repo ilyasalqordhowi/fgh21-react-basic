@@ -7,7 +7,7 @@ function Table() {
       name: "kaesang",
       age: 19,
       gender: "laki-laki",
-      isSmoker: true,
+      isSmoker: "Ya",
       cigarVariant: ["esse", ", ", "marlboro"],
     },
     {
@@ -15,7 +15,7 @@ function Table() {
       name: "antoni nugroho",
       age: 29,
       gender: "laki-laki",
-      isSmoker: true,
+      isSmoker: "Ya",
       cigarVariant: ["marlboro"],
     },
   ]);
@@ -42,16 +42,16 @@ function Table() {
   return (
     <React.Fragment>
       <form onSubmit={saveData}>
-        <div>
-          <div>
+        <div className="container-survey">
+          <div className="content">
             <label htmlFor="name">Nama</label>
             <input type="text" id="name" name="name"></input>
           </div>
-          <div>
+          <div className="content">
             <label htmlFor="age">Age</label>
             <input type="number" id="age" name="age"></input>
           </div>
-          <div>
+          <div className="content-input">
             <div>Gender</div>
             <input
               type="radio"
@@ -68,15 +68,15 @@ function Table() {
             ></input>
             <label htmlFor="female">perempuan</label>
           </div>
-          <div>
-            <div>is Smoker</div>
+          <div className="content-rokok">
+            <div>Perokok</div>
             <input type="radio" id="yes" name="isSmoker" value={"Ya"}></input>
             <label htmlFor="yes">Ya</label>
             <input type="radio" id="no" name="isSmoker" value={"Tidak"}></input>
             <label htmlFor="no">Tidak</label>
           </div>
           <div>
-            <div>Cigar variant</div>
+            <div>Type rokok</div>
             <input type="checkbox" id="esse" name="cigarVariant"></input>
             <label htmlFor="esse">esse</label>
             <input type="checkbox" id="marlboro" name="cigarVariant"></input>
@@ -84,8 +84,9 @@ function Table() {
             <input type="checkbox" id="gudang" name="cigarVAriant"></input>
             <label htmlFor="gudang">Gudang garam</label>
           </div>
-          <button type="submit">SAVE</button>
-          <button type="reset">SAVE</button>
+          <div className="button-survey">
+            <button type="submit">SAVE</button>
+          </div>
         </div>
       </form>
       <table border={1}>

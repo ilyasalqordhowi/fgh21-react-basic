@@ -4,7 +4,7 @@ import Table from "./components/Table";
 import Login from "./components/Login";
 
 function App() {
-  return <Login />;
+  return <Table />;
 }
 
 export default App;
