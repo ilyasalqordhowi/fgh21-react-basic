@@ -3,11 +3,18 @@ import asset_login from "../assets/img/spotify.png";
 
 function Login() {
   function doLogin(event) {
+    event.preventDefault();
     const name = event.target.name.value;
-    const password = event.target.email.value;
+    const password = event.target.password.value;
     if (name === "ilyas" && password === "ilyas123") {
       window.alert("benar");
+    } else {
+      window.alert("salah");
     }
+    if (name === "" && password === "") {
+      window.alert("harus di isi");
+    }
+    doLogin();
   }
   return (
     <div className="container">
@@ -23,7 +30,7 @@ function Login() {
           <div className="container-input">
             <input type="text" name="name"></input>
             <input type="password" name="password"></input>
-            <button>SIGN IN</button>
+            <button type="submit">SIGN IN</button>
             <label htmlFor="check">stay signed in</label>
           </div>
         </form>
