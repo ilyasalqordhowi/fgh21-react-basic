@@ -6,12 +6,17 @@ function Login() {
     event.preventDefault();
     const name = event.target.name.value;
     const password = event.target.password.value;
-    if (name === "ilyas" && password === "ilyas123") {
+    const email = event.target.email.value;
+    if (
+      name === "ilyas" &&
+      email === "ilyas@mail.com" &&
+      password === "ilyas123"
+    ) {
       window.alert("benar");
     } else {
       window.alert("salah");
     }
-    if (name === "" && password === "") {
+    if (name === "" && email === "" && password === "") {
       window.alert("harus di isi");
     }
     doLogin();
@@ -28,8 +33,13 @@ function Login() {
         </div>
         <form onSubmit={doLogin}>
           <div className="container-input">
-            <input type="text" name="name"></input>
-            <input type="password" name="password"></input>
+            <input type="text" name="name" placeholder="username"></input>
+            <input type="email" name="email" placeholder="email"></input>
+            <input
+              type="password"
+              name="password"
+              placeholder="password"
+            ></input>
             <button type="submit">SIGN IN</button>
             <label htmlFor="check">stay signed in</label>
           </div>
